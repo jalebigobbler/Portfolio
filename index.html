@@ -3,42 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hanaan's Website</title>
+    <title>Hanaan Hussain</title>
     <link rel="stylesheet" href="styles.css" />
-    
-    <link/>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
   </head>
   <body>
-    <!-- Navbar Section -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".navbar__links");
 
-    <nav class="navbar">
-      <div class="navbar__container"> 
-        <h1 class="navbar__logo">Hanaan Hussain</h1>
-        <ul class="navbar__menu">
-          <li class="navbar__item">
-            <a href="#home" class="navbar__links">Home</a>
-          </li>
-          <li class="navbar__item">
-            <a href="#about" class="navbar__links">About Me</a>
-          </li>
-          <li class="navbar__item">
-            <a href="#services" class="navbar__links">Services</a
-            >
-          </li>
-          <li class="navbar__item">
-            <a href="#contact" class="navbar__links">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+        // Scroll event listener to highlight current section in the navbar
+        window.addEventListener("scroll", () => {
+          let currentSection = "";
 
-    <!-- Home Section -->
-  <section id="home">
+          const pageBottomOffset = window.innerHeight + window.pageYOffset;
+          const documentHeight = document.body.scrollHeight;
+
+          if (pageBottomOffset >= documentHeight) {
+            currentSection = "contact";
+          } else {
+            sections.forEach((section) => {
+              const sectionTop = section.offsetTop;
+              const sectionHeight = section.clientHeight;
+              const buffer = 150;
+
+              if (
+                pageYOffset >= sectionTop - buffer &&
+                pageYOffset < sectionTop + sectionHeight - buffer
+              ) {
+                currentSection = section.getAttribute("id");
+              }
+            });
+          }
+
+          navLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href").includes(currentSection)) {
+              link.classList.add("active");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+
+<!-- Navbar Section -->
+
+  <nav class="navbar">
+    <div class="navbar__container">
+      <h1 class="navbar__logo">Hanaan<span>&#160;Hussain</span></h1>
+      <ul class="navbar__menu">
+        <li class="navbar__item">
+          <a href="#home" class="navbar__links">Home</a>
+        </li>
+        <li class="navbar__item">
+          <a href="#projects" class="navbar__links">Projects</a>
+        </li>
+        <li class="navbar__item">
+          <a href="#services" class="navbar__links">Services</a>
+        </li>
+        <li class="navbar__item">
+          <a href="#contact" class="navbar__links">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</html>
+
+<!-- Home Section -->
+<section id="home">
     <div class="home__section">
       <div class="home__wrapper">
         <div class="column__left">
-          <span>Abdul Hanaan Hussain — Isleworth and Syon School</span>
-          <h1>Student and Web Designer</h1>
+          <h1>Hello, I'm <span class="name__span">Hanaan</span></h1>
+          <h2>I'm a <span class="info__me">Student/WebDeveloper</span></h2>
           <p>
             I have experience in building games and websites for benefit of my education and I am currently studying for my GCSEs in school.
           </p>
@@ -46,41 +92,50 @@
         <div class="column__right">
           <img src="/images/ai-brain.svg" alt="brain" class="home__img" />
         </div>
-      </div>
-    </div>
-  </section>
-
-    <!-- About Section -->
-  <section id="about">
-    <div class="about__section">
-      <div class="about__container">
-        <h1 class="about__hello">Hello, I'm Hanaan.</h1>
-        <div class="about__content">
-          <div class="about__image">
-            <img src="images/layers.svg" alt="" class="about__img" />
-          </div>
-          <div class="about__text">
-            <h2>
-              I am Hanaan Hussain, a Student currently living in West London, Hounslow.
-            </h2>
-            <p>
-              I'm a dedicated student pursuing GCSEs I enjoy exploring literature, solving mathematical problems, and delving into scientific concepts. My studies in Computer Science and Business fuel my interest in technology and commerce. Through this diverse curriculum, I aim to develop a strong, versatile skill set for future academic and professional success.
-            </p>
-          </div>
+        
+        <div class="btn-group">
+          <a href="#projects" class="btn">Projects</a>
+          <a href="#contact" class="btn">Contact</a>
         </div>
       </div>
     </div>
   </section>
 
-    <!-- Services Section -->
+<!-- Projects Section -->
+  <section id="projects">
+    <div class="projects" id="projects">
+      <h1>My Projects</h1>
+      <div class="projects__wrapper">
+        <div class="projects__card">
+          <h2>Project 1</h2>
+          <div class="projects__btn"><button>View</button></div>
+        </div>
+        <div class="projects__card">
+          <h2>Project 2</h2>
+          <div class="projects__btn"><button>View</button></div>
+        </div>
+        <div class="projects__card">
+          <h2>Project 3</h2>
+          <div class="projects__btn"><button>View</button></div>
+        </div>
+        <div class="projects__card">
+          <h2>Project 4</h2>
+          <div class="projects__btn"><button>View</button></div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
     <section id="services">
       <div class="services">
       <div class="services__container">
-        <h1>Services</h1>
+        <h1>My Services</h1>
         <div class="services__grid">
           <div class="services__left">
             <div class="services__content">
-              <img src="./images/bishop.png" alt="chess piece" />
+              <img src="./images/king.png" alt="chess piece" />
               <div class="services__desc">
                 <h2>Game Development</h2>
                 <p>
@@ -89,7 +144,7 @@
               </div>
             </div>
             <div class="services__content">
-              <img src="./images/bishop.png" alt="chess piece" />
+              <img src="./images/queen.png" alt="chess piece" />
               <div class="services__desc">
                 <h2>websites and web apps</h2>
                 <p>
@@ -111,14 +166,24 @@
       </div>
   </section>
 
-      <!-- Contact Section -->
-      <section id="contact">
-        <div class="container">
-            <h1 class="me">Contact Me</h1>
-            <div class="contact-details">
-                <p class="info2">Email (Personal): <a class="info" href="mailto:hanaanhussain@icloud.com">hanaanhussain@icloud.com</a></p>
-                <p class="info2">Email (School): <a class="info" href="mailto:20hhussain@isleworthsyon.org">20hhussain@isleworthsyon.org</a></p>
-                <p class="info2">Phone:<a class="info" href="tel:07585926193">07585926193</a></p>
-            </div>
-        </div>
-    </section>
+<!-- Contact Section -->
+
+<section id="contact">
+  <div class="container">
+    <h1>Contact Me</h1>
+    <div class="contact-details">
+      <p class="info2">Email (Personal): <a class="info">hanaanhussain@email.com</a></p>
+      <p class="info2">Email (School/Work): <a class="info">hanaanhussain@work.com</a></p>
+      <p class="info2">Phone: <a class="info">0123456789</a></p>
+    </div>
+    <div class="social-media-icons">
+      <a class="social-icon" target="_blank"><i class='bx bxl-github'></i></a>
+      <a class="social-icon" target="_blank"><i class='bx bxl-instagram'></i></a>
+      <a class="social-icon" target="_blank"><i class='bx bxl-linkedin'></i></a>
+      <a class="social-icon" target="_blank"><i class='bx bxl-twitter'></i></a>
+    </div>
+    <div class="cv-container">
+      <a href="path_to_your_cv.pdf" class="cv-button">View CV</a>
+    </div>
+  </div>
+</section>
