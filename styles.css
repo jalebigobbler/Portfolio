@@ -451,6 +451,7 @@
   box-shadow: 0 0 15px var(--maincolor);
   background-color: var(--maincolor);
   color: black;
+  cursor: pointer;
 }
 
 .cv-container {
@@ -476,4 +477,5 @@
   box-shadow: 0 0 10px var(--maincolor);
   background-color: var(--maincolor);
   color: black;
+  cursor: pointer;
 }
