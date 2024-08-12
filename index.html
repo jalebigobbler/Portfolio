@@ -13,49 +13,48 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".navbar__links");
+
+    // Scroll event listener to highlight current section in the navbar
+    window.addEventListener("scroll", () => {
+      let currentSection = "";
+
+      const pageBottomOffset = window.innerHeight + window.pageYOffset;
+      const documentHeight = document.body.scrollHeight;
+
+      if (pageBottomOffset >= documentHeight) {
+        currentSection = "contact";
+      } else {
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          const buffer = 150;
+
+          if (
+            pageYOffset >= sectionTop - buffer &&
+            pageYOffset < sectionTop + sectionHeight - buffer
+          ) {
+            currentSection = section.getAttribute("id");
+          }
+        });
+      }
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(currentSection)) {
+          link.classList.add("active");
+        }
+      });
+    });
+  });
+</script>
   </head>
   <body>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const sections = document.querySelectorAll("section");
-        const navLinks = document.querySelectorAll(".navbar__links");
-
-        // Scroll event listener to highlight current section in the navbar
-        window.addEventListener("scroll", () => {
-          let currentSection = "";
-
-          const pageBottomOffset = window.innerHeight + window.pageYOffset;
-          const documentHeight = document.body.scrollHeight;
-
-          if (pageBottomOffset >= documentHeight) {
-            currentSection = "contact";
-          } else {
-            sections.forEach((section) => {
-              const sectionTop = section.offsetTop;
-              const sectionHeight = section.clientHeight;
-              const buffer = 150;
-
-              if (
-                pageYOffset >= sectionTop - buffer &&
-                pageYOffset < sectionTop + sectionHeight - buffer
-              ) {
-                currentSection = section.getAttribute("id");
-              }
-            });
-          }
-
-          navLinks.forEach((link) => {
-            link.classList.remove("active");
-            if (link.getAttribute("href").includes(currentSection)) {
-              link.classList.add("active");
-            }
-          });
-        });
-      });
-    </script>
-  </body>
-
-<!-- Navbar Section -->
+    
+    <!-- Navbar Section -->
 
   <nav class="navbar">
     <div class="navbar__container">
@@ -190,3 +189,5 @@
     </div>
   </div>
 </section>
+</body>
+
