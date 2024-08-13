@@ -128,8 +128,6 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
-  width: 412.5px;
-  height: 830px;
 }
 
 .column__left h1 {
@@ -140,7 +138,7 @@
 .column__left p {
   font-size: 16px;
   line-height: 2.3;
-  padding-bottom: 1px;
+  padding-bottom: 10px;
 }
 
 .column__right {
@@ -167,7 +165,7 @@
 
 .column__left h2 {
   font-size: 40px;
-  padding-bottom: 30px;
+  padding-bottom: 60px;
 }
 .social-media-icons {
   display: flex;
@@ -225,7 +223,7 @@
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  padding-top: 1px;
+  padding-top: 8px;
 }
 
 .btn-group a:nth-of-type(2) {
@@ -280,32 +278,30 @@
   flex-direction: column;
   justify-content: center;
   color: #fff;
-  background: #2193b0; /* fallback for old browsers */
+  background: #00b4db; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
-    #6dd5ed,
-    #2193b0
+    #0083b0,
+    #00b4db
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
-    #6dd5ed,
-    #2193b0
+    #0083b0,
+    #00b4db
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  transition: 0.3s ease-in;
 }
 
 .projects__card:nth-child(2) {
-  background: #2193b0; /* fallback for old browsers */
+  background: #00b4db; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
-    #6dd5ed,
-    #2193b0
+    #0083b0,
+    #00b4db
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
-    #6dd5ed,
-    #2193b0
+    #0083b0,
+    #00b4db
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
